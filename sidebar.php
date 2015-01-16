@@ -32,12 +32,12 @@ if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) || is_active_sidebar(
 	    <h5>Latest Posts</h5>
 	    <br>
 	    <ul class="block-grid three-up">
-	        <li><a href="#" data-width="90" title="Futuristic Glasses" class="th has-tip tip-top"><img src="img/blog/pop-1.jpg" alt="pop"></a></li>
-	        <li><a href="#" data-width="90" title="Living Room" class="th has-tip tip-top"><img src="img/blog/pop-2.jpg" alt="pop"></a></li>
-	        <li><a href="#" data-width="90" title="Futuristic Bird" class="th has-tip tip-top"><img src="img/blog/pop-3.jpg" alt="pop"></a></li>
-	        <li><a href="#" data-width="90" title="Fire-Fox" class="th has-tip tip-top"><img src="img/blog/pop-4.jpg" alt="pop"></a></li>
-	        <li><a href="#" data-width="90" title="Awwward Mag" class="th has-tip tip-top"><img src="img/blog/pop-5.jpg" alt="pop"></a></li>
-	        <li><a href="#" data-width="90" title="Misc" class="th has-tip tip-top"><img src="img/blog/pop-6.jpg" alt="pop"></a></li>
+	        <li><a href="#" data-width="90" title="Futuristic Glasses" class="th has-tip tip-top"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/pop-1.jpg" alt="pop"></a></li>
+	        <li><a href="#" data-width="90" title="Living Room" class="th has-tip tip-top"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/pop-2.jpg" alt="pop"></a></li>
+	        <li><a href="#" data-width="90" title="Futuristic Bird" class="th has-tip tip-top"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/pop-3.jpg" alt="pop"></a></li>
+	        <li><a href="#" data-width="90" title="Fire-Fox" class="th has-tip tip-top"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/pop-4.jpg" alt="pop"></a></li>
+	        <li><a href="#" data-width="90" title="Awwward Mag" class="th has-tip tip-top"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/pop-5.jpg" alt="pop"></a></li>
+	        <li><a href="#" data-width="90" title="Misc" class="th has-tip tip-top"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/pop-6.jpg" alt="pop"></a></li>
 	      </ul>
 	  </div>
 	  <div class="widgets">

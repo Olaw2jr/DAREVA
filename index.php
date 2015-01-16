@@ -16,79 +16,6 @@
 
 get_header(); ?>
 
-       <div class="nav-container">
-        <div class="row">
-            <div class="twelve columns">
-              <nav class="top-bar">
-                <ul>
-                  <!-- Title Area -->
-                  <li class="name">
-                    <h1>
-                      <a href="index.html">
-                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.png" alt="logo">
-                      </a>
-                    </h1>
-                  </li>
-                  <li class="toggle-topbar"><a href="#"></a></li>
-                </ul>
-
-              <section>
-                  <!-- Right Nav Section -->
-                  <ul class="right">
-                    <li class="nav-divider">&nbsp;</li>
-                    <li class="has-dropdown">
-                      <a class="active" href="index.html">Home</a>
-                      <ul class="dropdown">
-                        <li>
-                          <a href="index2.html">Home Different Style</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="nav-divider">&nbsp;</li>
-                    <li><a href="work.html">Work</a></li>
-                    <li class="nav-divider">&nbsp;</li>
-                    <li class="has-dropdown"><a href="blog.html">Blog</a>
-                      <ul class="dropdown">
-                        <li>
-                          <a href="blog.html">Blog </a>
-                        </li>
-                        <li><a href="blog-commertial.html">Blog commertial style</a></li>
-                        <li><a href="single-post.html">Single Post</a></li>
-                        <li><a href="single-post-commertial.html">Single commertial style</a></li>
-                        <li><a href="single-post-slider.html">Single slider</a></li>
-                        <li><a href="single-post-commertial-slider.html">Single commertial slider</a></li>
-                      </ul>
-
-                    </li>
-                    <li class="nav-divider">&nbsp;</li>
-                    <li class="has-dropdown"><a href="#">Pages</a>
-                      <ul class="dropdown">
-                            <li><a href="pricingtables.html">Pricing Table</a></li>
-                            <li><a href="pricingtables-commertial.html">Pricing Table Commertial</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="aboutus.html">About Us</a></li>
-                            <li><a href="shortcodes.html">Shortcodes</a></li>
-                            <li class="has-dropdown">
-                              <a href="#">Has Dropdown</a>
-                              <ul class="dropdown">
-                                <li><a href="#">Level 3</a></li>
-                                <li><a href="#">Level 3</a></li>
-                                <li><a href="#">Level 3</a></li>
-                              </ul>
-                            </li>
-                          </ul>
-                    </li>
-                    <li class="nav-divider">&nbsp;</li>
-                    <li><a href="contact.html">Contact</a></li>
-                  </ul>
-
-                </section>
-              </nav>
-            </div>
-          </div>
-      </div>
-    </div> <!-- end nav-container -->
-
 <section class="page-head">
   <div class="row">
     <div class="twelve columns">
@@ -221,7 +148,7 @@ get_header(); ?>
   </div>
   
   <?php get_sidebar(); ?>
-  
+
 </section>
 
 <section class="pagination-outer-container">
@@ -250,8 +177,8 @@ get_header(); ?>
     <div class="eight columns">
       <div class="msg-inner-container">
         <p class="lead">
-  Welcome to the FireStudio Subscription Center. Sign up here to receive the latest news and updates from the FireStudio conveniently via e-mail. Subscribe by entering your e-mail.
-</p>
+          Welcome to the FireStudio Subscription Center. Sign up here to receive the latest news and updates from the FireStudio conveniently via e-mail. Subscribe by entering your e-mail.
+        </p>
 
       </div>
     </div>

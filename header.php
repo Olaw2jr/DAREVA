@@ -32,3 +32,37 @@
   <?php wp_head(); ?>
 </head>
 <body>
+
+<div class="nav-container">
+  <div class="row">
+    <div class="twelve columns">
+      <nav class="top-bar">
+        <ul>
+          <!-- Title Area -->
+          <li class="name">
+            <h1>
+              <a href="index.html">
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.png" alt="logo">
+              </a>
+            </h1>
+          </li>
+          <li class="toggle-topbar"><a href="#"></a></li>
+        </ul>
+
+        <?php if ( has_nav_menu( 'primary' ) ) : ?>
+          <section>
+              <!-- Right Nav Section -->
+            <?php
+              // Primary navigation menu.
+              wp_nav_menu( array(
+                'menu_class'     => 'right',
+                'theme_location' => 'primary',
+              ) );
+            ?>
+          </section><!-- .Right Nav Section -->
+        <?php endif; ?>
+
+      </nav>
+    </div>
+  </div>
+</div> <!-- end nav-container -->
