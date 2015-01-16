@@ -31,8 +31,16 @@
  * @since DAREVA 1.0
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 660;
+	$content_width = 848;
 }
+/**
+ * 
+ * Define theme constants.
+ * 
+ */
+define( 'THEMEROOT', get_stylesheet_directory_uri() );
+define( 'IMAGES', THEMEROOT . '/images' );
+define( 'SCRIPTS', THEMEROOT . '/assets/js' );
 
 /**
  * DAREVA only works in WordPress 4.1 or later.
@@ -199,38 +207,74 @@ endif;
  * @since DAREVA 1.0
  */
 function dareva_scripts() {
-	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'dareva-fonts', dareva_fonts_url(), array(), null );
-
 	// Add Genericons, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.2' );
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/assets/css/dareva.css', array(), '3.2' );
 
-	// Load our main stylesheet.
-	wp_enqueue_style( 'dareva-style', get_stylesheet_uri() );
+// Register style
+	// Social icon fonts 
+	wp_register_style( 'social_foundicons', THEMEROOT . '/assets/css/social_foundicons.css');
+	wp_register_style( 'general_enclosed_foundicons', THEMEROOT . '/assets/css/general_enclosed_foundicons.css');
+	wp_register_style( 'general_foundicons', THEMEROOT . '/assets/css/general_foundicons.css');
+	  
+	// Google fonts 
+	wp_register_style( 'font', THEMEROOT . '/assets/css/fonts.css');
 
-	// Load the Internet Explorer specific stylesheet.
-	wp_enqueue_style( 'dareva-ie', get_template_directory_uri() . '/css/ie.css', array( 'dareva-style' ), '20141010' );
-	wp_style_add_data( 'dareva-ie', 'conditional', 'lt IE 9' );
+	// Included CSS Files 
+	wp_register_style( 'sequencejs-theme', THEMEROOT . '/assets/css/sequencejs-theme.modern-slide-in.css');
+	wp_register_style( 'dareva', THEMEROOT . '/assets/css/style.css');
 
-	// Load the Internet Explorer 7 specific stylesheet.
-	wp_enqueue_style( 'dareva-ie7', get_template_directory_uri() . '/css/ie7.css', array( 'dareva-style' ), '20141010' );
-	wp_style_add_data( 'dareva-ie7', 'conditional', 'lt IE 8' );
+// Load the stylesheets
+	wp_enqueue_style( 'social_foundicons' );
+	wp_enqueue_style( 'general_enclosed_foundicons' );
+	wp_enqueue_style( 'general_foundicons' );
+	wp_enqueue_style( 'font' );
+	wp_enqueue_style( 'sequencejs-theme' );
+	wp_enqueue_style( 'dareva' );
 
-	wp_enqueue_script( 'dareva-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20141010', true );
+// Register scripts
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_register_script( 'modernizr.foundation', SCRIPTS . '/foundation/modernizr.foundation.js', array( 'jquery' ), false, false );
 
-	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'dareva-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20141010' );
-	}
+	// Included JS Files (Uncompressed)
 
-	wp_enqueue_script( 'dareva-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20141212', true );
-	wp_localize_script( 'dareva-script', 'screenReaderText', array(
-		'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'dareva' ) . '</span>',
-		'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'dareva' ) . '</span>',
-	) );
+  	wp_register_script( 'isotope', SCRIPTS . '/isotope.js', array( 'jquery' ), false, true );
+  	wp_register_script( 'sequence.jquery-min', SCRIPTS . '/sequence.jquery-min.js', array( 'jquery' ), false, true );
+  	wp_register_script( 'jquery.hoverdir', SCRIPTS . '/jquery.hoverdir.js', array( 'jquery' ), false, true );
+  	wp_register_script( 'twitter', SCRIPTS . '/twitter.js', array( 'jquery' ), false, true );
+
+	wp_register_script( 'foundation.tabs', SCRIPTS . '/foundation/jquery.foundation.tabs.js', array( 'jquery' ), false, true );
+	wp_register_script( 'foundation.tooltips', SCRIPTS . '/foundation/jquery.foundation.tooltips.js', array( 'jquery' ), false, true );
+	wp_register_script( 'foundation.reveal', SCRIPTS . '/foundation/jquery.foundation.reveal.js', array( 'jquery' ), false, true );
+	wp_register_script( 'foundation.mediaQueryToggle', SCRIPTS . '/foundation/jquery.foundation.mediaQueryToggle.js', array( 'jquery' ), false, true );
+	wp_register_script( 'foundation.buttons', SCRIPTS . '/foundation/jquery.foundation.buttons.js', array( 'jquery' ), false, true );
+	wp_register_script( 'foundation.forms', SCRIPTS . '/foundation/jquery.foundation.forms.js', array( 'jquery' ), false, true );
+	wp_register_script( 'foundation.navigation', SCRIPTS . '/foundation/jquery.foundation.navigation.js', array( 'jquery' ), false, true );
+	wp_register_script( 'foundation.orbit', SCRIPTS . '/foundation/jquery.foundation.orbit.js', array( 'jquery' ), false, true );
+	wp_register_script( 'foundation.alerts', SCRIPTS . '/foundation/jquery.foundation.alerts.js', array( 'jquery' ), false, true );
+	wp_register_script( 'jquery.placeholder', SCRIPTS . '/foundation/jquery.placeholder.js', array( 'jquery' ), false, true );
+	wp_register_script( 'foundation.topbar', SCRIPTS . '/foundation/jquery.foundation.topbar.js', array( 'jquery' ), false, true );
+	wp_register_script( 'foundation.accordion', SCRIPTS . '/foundation/jquery.foundation.accordion.js', array( 'jquery' ), false, true );
+
+	// Application Javascript, safe to override 
+  	wp_register_script( 'dareva', SCRIPTS . '/foundation/app.js', array( 'jquery' ), false, true );
+
+  	wp_enqueue_script('isotope');
+	wp_enqueue_script('sequence.jquery-min');
+	wp_enqueue_script('jquery.hoverdir');
+	wp_enqueue_script('twitter');
+	wp_enqueue_script('foundation.tabs');
+	wp_enqueue_script('foundation.tooltips');
+	wp_enqueue_script('foundation.reveal');
+	wp_enqueue_script('foundation.mediaQueryToggle');
+	wp_enqueue_script('foundation.buttons');
+	wp_enqueue_script('foundation.forms');
+	wp_enqueue_script('foundation.navigation');
+	wp_enqueue_script('foundation.orbit');
+	wp_enqueue_script('foundation.alerts');
+	wp_enqueue_script('jquery.placeholder');
+	wp_enqueue_script('foundation.topbar');
+	wp_enqueue_script('foundation.accordion');
+	wp_enqueue_script('dareva');
 }
 add_action( 'wp_enqueue_scripts', 'dareva_scripts' );
 

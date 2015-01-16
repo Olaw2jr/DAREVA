@@ -75,7 +75,15 @@
               <div class="row">
               <div class="six columns">
                 <div class="subfooter-widgets">
-                  <p>&copy; Fire Design Studio Inc. All rights Reseved.</p>
+                  <?php
+                    /**
+                     * Fires before the DAREVA footer text for footer customization.
+                     *
+                     * @since DAREVA 1.0
+                     */
+                    do_action( 'dareva_credits' );
+                  ?>
+                  <p><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'dareva' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'dareva' ), 'WordPress' ); ?></a>.</p>
                 </div>
               </div>
               <div class="six columns right">
@@ -97,40 +105,8 @@
         </div> <!-- end footer-container -->
   </div> <!-- end footer-container -->
   </footer>
-	<!-- Included JS Files (Uncompressed) -->
-  <script src="<?php echo esc_url( get_template_directory_uri() ); ?>///ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/foundation/jquery.js"><\/script>')</script>
-  <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/isotope.js"></script>
-  <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/sequence.jquery-min.js"></script>
-  <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/jquery.hoverdir.js"></script>
-  <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/twitter.js"></script>
 
-	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/foundation/jquery.foundation.tabs.js"></script>
+	<?php wp_footer(); ?>
 
-	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/foundation/jquery.foundation.tooltips.js"></script>
-
-	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/foundation/jquery.foundation.reveal.js"></script>
-
-	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/foundation/jquery.foundation.mediaQueryToggle.js"></script>
-
-	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/foundation/jquery.foundation.buttons.js"></script>
-
-	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/foundation/jquery.foundation.forms.js"></script>
-
-	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/foundation/jquery.foundation.navigation.js"></script>
-
-	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/foundation/jquery.foundation.orbit.js"></script>
-
-	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/foundation/jquery.foundation.alerts.js"></script>
-
-	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/foundation/jquery.placeholder.js"></script>
-
-	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/foundation/jquery.foundation.topbar.js"></script>
-
-	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/foundation/jquery.foundation.accordion.js"></script>
-
-
-  <!-- Application Javascript, safe to override -->
-  <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/foundation/app.js"></script>
 </body>
 </html>

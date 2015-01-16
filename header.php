@@ -20,24 +20,10 @@
 
 	<!-- Set the viewport width to device width for mobile -->
 	<meta name="viewport" content="width=device-width" />
-	<link rel="profile" href="<?php echo esc_url( get_template_directory_uri() ); ?>/http://gmpg.org/xfn/11">
-	<link rel="pingback" href="<?php echo esc_url( get_template_directory_uri() ); ?>/<?php bloginfo( 'pingback_url' ); ?>">
-
-	<title>Fire Studio</title>
-	
-  <!-- Social icon fonts -->
-  <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/social_foundicons.css" />
-  <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/general_enclosed_foundicons.css" />
-  <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/general_foundicons.css" />
   
-  <!-- Google fonts -->
-    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/fonts.css" />
+  	<link rel="profile" href="http://gmpg.org/xfn/11">
+  	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	<!-- Included CSS Files -->
-  <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/sequencejs-theme.modern-slide-in.css" />
-  <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/style.css" />
-
-	<script src="js/foundation/modernizr.foundation.js"></script>
   <!-- IE Fix for HTML5 Tags -->
   <!--[if lt IE 9]>
     <link rel="stylesheet" type="text/css" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/sequencejs-theme.modern-slide-in.ie.css" />
