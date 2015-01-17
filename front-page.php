@@ -69,7 +69,7 @@ get_header(); ?>
 <div class="row">
   <div class="twelve columns">
     <div class="home-tagline">
-      <h2>Our <span>Expertise.</span></h2>
+      <h2>Our <span>Functions.</span></h2>
     </div>
   </div>
 </div>
@@ -81,7 +81,7 @@ get_header(); ?>
           <a href="#" class="th">
               <span class="ca-icon"><i class="general foundicon-website"></i></span>
               <div class="ca-content">
-                  <h3 class="ca-main">Exceptional <br>Service</h3>
+                  <h3 class="ca-main">Function <br>One</h3>
                   <h6 class="ca-sub">Personalized for your</h6>
               </div>
           </a>
@@ -92,7 +92,7 @@ get_header(); ?>
           <a href="#" class="th">
               <span class="ca-icon"><i class="general foundicon-graph"></i></span>
               <div class="ca-content">
-                  <h3 class="ca-main">Creative <br>Storytelling</h3>
+                  <h3 class="ca-main">Function <br>Two</h3>
                   <h6 class="ca-sub">Advanced technology</h6>
               </div>
           </a>
@@ -103,7 +103,7 @@ get_header(); ?>
           <a href="#" class="th">
               <span class="ca-icon" id="heart"><i class="general foundicon-heart"></i></span>
                 <div class="ca-content">
-                    <h3 class="ca-main">Infographical Education</h3>
+                    <h3 class="ca-main">Function <br> Three</h3>
                     <h6 class="ca-sub">Understanding visually</h6>
                 </div>
           </a>
@@ -114,7 +114,7 @@ get_header(); ?>
           <a href="#" class="th">
            <span class="ca-icon"><i class="general foundicon-phone"></i></span>
             <div class="ca-content">
-                <h3 class="ca-main">Unlimited <br> Support</h3>
+                <h3 class="ca-main">Function <br> Four</h3>
                 <h6 class="ca-sub">24/7 for your needs</h6>
             </div>
           </a>
@@ -123,135 +123,11 @@ get_header(); ?>
   </div> <!-- end row -->
 </section>
 
-<div class="row">
-  <div class="twelve columns">
-    <div class="home-tagline">
-      <h2>Our <span>Articles.</span></h2>
-    </div>
-  </div>
-</div>
-
-<section class="recent-content-tabs diff">
-<section class="row">
-  <div class="twelve columns">
-
-<div class="tabs-content-container">
-
-<ul class="tabs-content ">
-  <li class="active" id="simple1Tab">
-    <div class="row">
-      <div class="eight columns">
-        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/blog-4.png" alt="blog">
-      </div>
-      <div class="four columns">
-        <header class="tab-title">
-              <a href="#">
-                 <h3 class="blog-title">HTML5 &amp; CSS3 Features</h3>
-              </a>
-          </header>
-         <div class="blog-content">
-              <p>How can I start using HTML5 if older browsers don’t support it? But the question itself is misleading. HTML5 is not one big thing.</p>
-              <p>
-                You may well ask: “How can I start using HTML5 if older browsers don’t support it?” But the question itself is misleading.
-              </p>
-
-
-              <a href="#" class="more-link">Read more &nbsp;&#8594;</a>
-            </div>
-      </div>
-    </div>
-  </li>
-  <li id="simple2Tab">
-    <div class="row">
-      <div class="eight columns">
-        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/blog-3.png" alt="blog">
-      </div>
-      <div class="four columns">
-        <header class="tab-title">
-              <a href="#">
-                 <h3 class="blog-title">The Nokia new edition</h3>
-              </a>
-          </header>
-         <div class="blog-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-              <p>
-                You may well ask: “How can I start using HTML5 if older browsers don’t support it?” But the question itself is misleading.
-              </p>
-
-              <a href="#" class="more-link">Read more &nbsp;&#8594;</a>
-            </div>
-      </div>
-    </div>
-  </li>
-  <li id="simple3Tab">
-    <div class="row">
-      <div class="eight columns">
-        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/blog-5.png" alt="blog">
-      </div>
-      <div class="four columns">
-        <header class="tab-title">
-              <a href="#">
-                 <h3 class="blog-title">Bright ideas up here.</h3>
-              </a>
-          </header>
-         <div class="blog-content">
-              <p>
-                You may well ask: “How can I start using HTML5 if older browsers don’t support it?” But the question itself is misleading.
-              </p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-
-              <a href="#" class="more-link">Read more &nbsp;&#8594;</a>
-            </div>
-      </div>
-    </div>
-  </li>
-  <li id="simple4Tab">
-    <div class="row">
-      <div class="eight columns">
-        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/blog-6.png" alt="blog">
-      </div>
-      <div class="four columns">
-        <header class="tab-title">
-              <a href="#">
-                 <h3 class="blog-title">Even more bright ideas</h3>
-              </a>
-          </header>
-         <div class="blog-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-              <p>
-                You may well ask: “How can I start using HTML5 if older browsers don’t support it?” But the question itself is misleading.
-              </p>
-
-              <a href="#" class="more-link">Read more &nbsp;&#8594;</a>
-            </div>
-      </div>
-    </div>
-  </li>
-</ul>
-<div class="row">
-  <div class="eight columns">
-    <div class="recent-tabs-icons">
-      <dl class="tabs">
-        <dd class="active"><a href="#simple1"><i class="general foundicon-website"></i></a></dd>
-        <dd><a href="#simple2"><i class="general foundicon-photo"></i></a></dd>
-        <dd><a href="#simple3"><i class="general foundicon-cloud"></i></a></dd>
-        <dd><a href="#simple4"><i class="general foundicon-idea"></i></a></dd>
-      </dl>
-    </div>
-  </div>
-</div>
-</div>
-  </div>
-</section>
-</section> <!-- end section-tabs -->
 
 <div class="row">
   <div class="twelve columns">
     <div class="home-tagline">
-      <h2>Our <span>Work.</span></h2>
+      <h2>Recent <span>News.</span></h2>
     </div>
   </div>
 </div>
