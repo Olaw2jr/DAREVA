@@ -21,59 +21,34 @@ get_header(); ?>
         <ul id="sequence-slides">
           <li>
             <div class="slider-bg"></div>
-           <h2 class="slider-title">Responsive Web Design.</h2>
-             <h3 class="subtitle">Create unique sliders using CSS3 transitions</h3>
-             <button type="button" class="btn btn-large btn-inverse slider-button">Buy my App now</button>
           <img class="sky " src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/slider-patterns/overlay2.png" alt="Blue Sky" />
         </li>
           <li>
             <div class="slider-bg"></div>
-            <h2 class="slider-title ">Start buying this theme.</h2>
-            <h3 class="subtitle ">The Responsive Slider with Advanced CSS3 Transitions</h3
-              >
-              <button type="button" class="btn btn-large btn-info slider-button">Buy my App now</button>
             <img class="sky " src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/slider-patterns/space_background2.jpg" alt="Blue Sky" />
           </li>
           <li>
             <div class="slider-bg"></div>
-             <h2 class="slider-title">This could be your Product.</h2>
-             <h3 class="subtitle ">Responsive Slider with Advanced CSS3 Transitions</h3>
-             <button type="button" class="btn btn-large btn-danger slider-button">Buy my Theme</button>
             <img class="sky " src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/slider-patterns/overlay2.png" alt="Blue Sky" />
         </li>
         <li>
           <div class="slider-bg"></div>
-             <h2 class="slider-title">This could be your App.</h2>
-             <h3 class="subtitle">Image credit to this amazing photographer Mark Sebastian.</h3>
-             <a href="http://www.flickr.com/photos/markjsebastian/" class="btn btn-large btn-inverse slider-button">Check it Here</a>
           <img class="sky " src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/slider-patterns/overlay1.png" alt="Blue Sky" />
         </li>
         <li>
           <div class="slider-bg"></div>
-          <h2 class="slider-title">Powered with HTML5 &amp; CSS3.</h2>
-            <h3 class="subtitle">Supports modern browsers, old browsers (IE8+), touch devices.</h3>
-            <button type="button" class="btn btn-large btn-info slider-button">Check your phone</button>
           <img class="sky " src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/slider-patterns/overlay3.png" alt="Blue Sky" />
         </li>
           <li>
             <div class="slider-bg"></div>
-            <h2 class="slider-title ">Built using Sequence</h2>
-               <h3 class="subtitle ">The Responsive Slider with Advanced CSS3 Transitions</h3>
-               <button type="button" class="btn btn-large btn-info slider-button">Amazing buttons</button>
             <img class="sky " src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/slider-patterns/space_background2.jpg" alt="Blue Sky" />
           </li>
           <li>
             <div class="slider-bg"></div>
-            <h2 class="slider-title">Powered with HTML5 &amp; CSS3.</h2>
-            <h3 class="subtitle">Create unique sliders using CSS3 transitions</h3>
-            <button type="button" class="btn btn-large btn-warning slider-button">Buy my App now</button>
             <img class="sky " src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/slider-patterns/overlay2.png" alt="Blue Sky" />
           </li>
           <li>
             <div class="slider-bg"></div>
-            <h2 class="slider-title">Responsive Web Design.</h2>
-            <h3 class="subtitle">Supports modern browsers, old browsers (IE8+), touch devices.</h3>
-            <button type="button" class="btn btn-large btn-success slider-button">Buy my App now</button>
             <img class="sky " src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/slider-patterns/overlay2.png" alt="Blue Sky" />
           </li>
         </ul>
@@ -85,7 +60,7 @@ get_header(); ?>
   <div class="row">
   <div class="twelve columns">
     <div class="tagline">
-      <h1>Fire Studio <span>Loves</span> crafting new concepts and experiences, <br>reaching people through design &amp; web development.</h1>
+      <h1><span>DAREVA</span> Dar es Salaam Regional Volleyball Association<br> is a volleyball association in Dar es Salaam Region, Thats responsible Volleyball.</h1>
     </div>
   </div>
 </div>
