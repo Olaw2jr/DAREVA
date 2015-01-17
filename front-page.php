@@ -15,8 +15,8 @@ get_header(); ?>
 <!-- slider-start -->
   <div id="header-container">
     <div class="header">
-        <img class="prev" src="img/bt-prev.png" alt="Previous Frame" />
-        <img class="next" src="img/bt-next.png" alt="Next Frame" />
+        <img class="prev" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/bt-prev.png" alt="Previous Frame" />
+        <img class="next" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/bt-next.png" alt="Next Frame" />
       <div id="sequence">
         <ul id="sequence-slides">
           <li>
@@ -24,8 +24,7 @@ get_header(); ?>
            <h2 class="slider-title">Responsive Web Design.</h2>
              <h3 class="subtitle">Create unique sliders using CSS3 transitions</h3>
              <button type="button" class="btn btn-large btn-inverse slider-button">Buy my App now</button>
-          <img class="sky " src="img/slider-patterns/overlay2.png" alt="Blue Sky" />
-          <img class="iphone2" src="img/iphone.png" alt="iPhone4" />
+          <img class="sky " src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/slider-patterns/overlay2.png" alt="Blue Sky" />
         </li>
           <li>
             <div class="slider-bg"></div>
@@ -33,36 +32,27 @@ get_header(); ?>
             <h3 class="subtitle ">The Responsive Slider with Advanced CSS3 Transitions</h3
               >
               <button type="button" class="btn btn-large btn-info slider-button">Buy my App now</button>
-            <img class="sky " src="img/slider-patterns/space_background2.jpg" alt="Blue Sky" />
-            <img class="model " src="img/iphone.png" alt="iPhone4" />
+            <img class="sky " src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/slider-patterns/space_background2.jpg" alt="Blue Sky" />
           </li>
           <li>
             <div class="slider-bg"></div>
              <h2 class="slider-title">This could be your Product.</h2>
              <h3 class="subtitle ">Responsive Slider with Advanced CSS3 Transitions</h3>
              <button type="button" class="btn btn-large btn-danger slider-button">Buy my Theme</button>
-            <img class="model" src="img/ipad.png" alt="iPad" />
-           <!--  <div class="slider-video">
-                <iframe src="http://player.vimeo.com/video/31136236?title=0&amp;byline=0&amp;portrait=0&amp;color=ff3579" width="380" height="200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-              </div> -->
-            <img class="sky " src="img/slider-patterns/overlay2.png" alt="Blue Sky" />
+            <img class="sky " src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/slider-patterns/overlay2.png" alt="Blue Sky" />
         </li>
         <li>
           <div class="slider-bg"></div>
-          <img class="ipad" src="img/ipad.png" alt="iPad" />
              <h2 class="slider-title">This could be your App.</h2>
              <h3 class="subtitle">Image credit to this amazing photographer Mark Sebastian.</h3>
              <a href="http://www.flickr.com/photos/markjsebastian/" class="btn btn-large btn-inverse slider-button">Check it Here</a>
-          <img class="sky " src="img/slider-patterns/overlay1.png" alt="Blue Sky" />
+          <img class="sky " src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/slider-patterns/overlay1.png" alt="Blue Sky" />
         </li>
         <li>
           <div class="slider-bg"></div>
           <h2 class="slider-title">Powered with HTML5 &amp; CSS3.</h2>
             <h3 class="subtitle">Supports modern browsers, old browsers (IE8+), touch devices.</h3>
             <button type="button" class="btn btn-large btn-info slider-button">Check your phone</button>
-          <img class="iphone2" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/iphone.png" alt="iPhone4" />
-          <img class="iphone3" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/iphone.png" alt="iPhone4" />
-          <img class="iphone4" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/iphone.png" alt="iPhone4" />
           <img class="sky " src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/slider-patterns/overlay3.png" alt="Blue Sky" />
         </li>
           <li>
@@ -71,14 +61,12 @@ get_header(); ?>
                <h3 class="subtitle ">The Responsive Slider with Advanced CSS3 Transitions</h3>
                <button type="button" class="btn btn-large btn-info slider-button">Amazing buttons</button>
             <img class="sky " src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/slider-patterns/space_background2.jpg" alt="Blue Sky" />
-            <img class="balloon " src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/iphone.png" alt="Balloon" />
           </li>
           <li>
             <div class="slider-bg"></div>
             <h2 class="slider-title">Powered with HTML5 &amp; CSS3.</h2>
             <h3 class="subtitle">Create unique sliders using CSS3 transitions</h3>
             <button type="button" class="btn btn-large btn-warning slider-button">Buy my App now</button>
-            <img class="model" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/ipad.png" alt="iPad" />
             <img class="sky " src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/slider-patterns/overlay2.png" alt="Blue Sky" />
           </li>
           <li>
@@ -86,7 +74,6 @@ get_header(); ?>
             <h2 class="slider-title">Responsive Web Design.</h2>
             <h3 class="subtitle">Supports modern browsers, old browsers (IE8+), touch devices.</h3>
             <button type="button" class="btn btn-large btn-success slider-button">Buy my App now</button>
-            <img class="model " src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/iphone.png" alt="iPhone4" />
             <img class="sky " src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/slider-patterns/overlay2.png" alt="Blue Sky" />
           </li>
         </ul>

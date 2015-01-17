@@ -45,83 +45,48 @@ if ( ! function_exists( 'dareva_entry_meta' ) ) :
  * @since DAREVA 1.0
  */
 function dareva_entry_meta() {
-	if ( is_sticky() && is_home() && ! is_paged() ) {
-		printf( '<span class="sticky-post">%s</span>', __( 'Featured', 'dareva' ) );
-	}
-
-	$format = get_post_format();
-	if ( current_theme_supports( 'post-formats', $format ) ) {
-		printf( '<span class="entry-format">%1$s<a href="%2$s">%3$s</a></span>',
-			sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Format', 'Used before post format.', 'dareva' ) ),
-			esc_url( get_post_format_link( $format ) ),
-			get_post_format_string( $format )
-		);
-	}
-
+	
 	if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-		}
-
 		$time_string = sprintf( $time_string,
 			esc_attr( get_the_date( 'c' ) ),
-			get_the_date(),
-			esc_attr( get_the_modified_date( 'c' ) ),
-			get_the_modified_date()
+			get_the_date()
 		);
 
-		printf( '<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
-			_x( 'Posted on', 'Used before publish date.', 'dareva' ),
+		printf( '<li class="blog-date"><a href="%2$s" rel="bookmark">%3$s</a></li>',
+			_x( '', 'Used before publish date.', 'dareva' ),
 			esc_url( get_permalink() ),
 			$time_string
 		);
 	}
 
+
+	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		echo '<li class="blog-comments-count">';
+		comments_popup_link( __( 'Leave a comment', 'dareva' ), __( '1 Comment', 'dareva' ), __( '% Comments', 'dareva' ) );
+		echo '</li>';
+	}
+
 	if ( 'post' == get_post_type() ) {
-		if ( is_singular() || is_multi_author() ) {
-			printf( '<span class="byline"><span class="author vcard"><span class="screen-reader-text">%1$s </span><a class="url fn n" href="%2$s">%3$s</a></span></span>',
-				_x( 'Author', 'Used before post author name.', 'dareva' ),
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				get_the_author()
-			);
-		}
 
 		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'dareva' ) );
 		if ( $categories_list && dareva_categorized_blog() ) {
-			printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-				_x( 'Categories', 'Used before category names.', 'dareva' ),
+			printf( '<li class="blog-tags"><span class="screen-reader-text">%1$s </span>%2$s</li>',
+				_x( '', 'Used before category names.', 'dareva' ),
 				$categories_list
 			);
 		}
 
 		$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'dareva' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-				_x( 'Tags', 'Used before tag names.', 'dareva' ),
+			printf( '<li class="blog-tags"><span class="screen-reader-text">%1$s </span>%2$s</li>',
+				_x( '', 'Used before tag names.', 'dareva' ),
 				$tags_list
 			);
 		}
 	}
 
-	if ( is_attachment() && wp_attachment_is_image() ) {
-		// Retrieve attachment metadata.
-		$metadata = wp_get_attachment_metadata();
-
-		printf( '<span class="full-size-link"><span class="screen-reader-text">%1$s </span><a href="%2$s">%3$s &times; %4$s</a></span>',
-			_x( 'Full size', 'Used before full size attachment link.', 'dareva' ),
-			esc_url( wp_get_attachment_url() ),
-			$metadata['width'],
-			$metadata['height']
-		);
-	}
-
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', 'dareva' ), __( '1 Comment', 'dareva' ), __( '% Comments', 'dareva' ) );
-		echo '</span>';
-	}
 }
 endif;
 
@@ -187,13 +152,13 @@ function dareva_post_thumbnail() {
 	if ( is_singular() ) :
 	?>
 
-	<div class="post-thumbnail">
+	<div class="">
 		<?php the_post_thumbnail(); ?>
 	</div><!-- .post-thumbnail -->
 
 	<?php else : ?>
 
-	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+	<a href="<?php the_permalink(); ?>" class="th" aria-hidden="true">
 		<?php
 			the_post_thumbnail( 'post-thumbnail', array( 'alt' => get_the_title() ) );
 		?>
@@ -239,4 +204,57 @@ function dareva_excerpt_more( $more ) {
 	return ' &hellip; ' . $link;
 }
 add_filter( 'excerpt_more', 'dareva_excerpt_more' );
+endif;
+
+if (! function_exists('dareva_pagination') && ! is_admin()):
+/**
+ * Out puts foundation built in pagination for WorPress.
+ * Thanks to: https://gist.github.com/croemmich/5830094
+ *
+ * @since DAREVA 1.0
+ *
+ * @return string pagination links.
+ */
+
+	 function dareva_pagination($arrows = true, $ends = true, $pages = 2)
+{
+    if (is_singular()) return;
+
+    global $wp_query, $paged;
+    $pagination = '';
+
+    $max_page = $wp_query->max_num_pages;
+    if ($max_page == 1) return;
+    if (empty($paged)) $paged = 1;
+
+    if ($arrows) $pagination .= dareva_pagination_link($paged - 1, 'arrow' . (($paged <= 1) ? ' unavailable' : ''), '&laquo;', 'Previous Page');
+    if ($ends && $paged > $pages + 1) $pagination .= dareva_pagination_link(1);
+    if ($ends && $paged > $pages + 2) $pagination .= dareva_pagination_link(1, 'unavailable', '&hellip;');
+    for ($i = $paged - $pages; $i <= $paged + $pages; $i++) {
+        if ($i > 0 && $i <= $max_page)
+            $pagination .= dareva_pagination_link($i, ($i == $paged) ? 'current' : '');
+    }
+    if ($ends && $paged < $max_page - $pages - 1) $pagination .= dareva_pagination_link($max_page, 'unavailable', '&hellip;');
+    if ($ends && $paged < $max_page - $pages) $pagination .= dareva_pagination_link($max_page);
+
+    if ($arrows) $pagination .= dareva_pagination_link($paged + 1, 'arrow' . (($paged >= $max_page) ? ' unavailable' : ''), '&raquo;', 'Next Page');
+
+    $pagination = '<ul class="pagination" role="menubar" aria-label="Pagination">' . $pagination . '</ul>';
+    $pagination = '<div class="pagination-container">' . $pagination . '</div>';
+
+    echo $pagination;
+}
+
+function dareva_pagination_link($page, $class = '', $content = '', $title = '')
+{
+    $id = sanitize_title_with_dashes('pagination-page-' . $page . ' ' . $class);
+    $href = (strrpos($class, 'unavailable') === false && strrpos($class, 'current') === false) ? get_pagenum_link($page) : "#$id";
+
+    $class = empty($class) ? $class : " class=\"$class\"";
+    $content = !empty($content) ? $content : $page;
+    $title = !empty($title) ? $title : 'Page ' . $page;
+
+    return "<li$class><a id=\"$id\" href=\"$href\" title=\"$title\">$content</a></li>\n";
+}
+
 endif;

@@ -33,8 +33,8 @@ function dareva_custom_header_setup() {
 	 */
 	add_theme_support( 'custom-header', apply_filters( 'dareva_custom_header_args', array(
 		'default-text-color'     => $default_text_color,
-		'width'                  => 954,
-		'height'                 => 1300,
+		'width'                  => 162,
+		'height'                 => 45,
 		'wp-head-callback'       => 'dareva_header_style',
 	) ) );
 }
@@ -90,49 +90,14 @@ function dareva_header_style() {
 		// Short header for when there is no Custom Header and Header Text is hidden.
 		if ( empty( $header_image ) && ! display_header_text() ) :
 	?>
-		.site-header {
-			padding-top: 14px;
-			padding-bottom: 14px;
-		}
-
-		.site-branding {
-			min-height: 42px;
-		}
-
-		@media screen and (min-width: 46.25em) {
-			.site-header {
-				padding-top: 21px;
-				padding-bottom: 21px;
-			}
-			.site-branding {
-				min-height: 56px;
-			}
-		}
-		@media screen and (min-width: 55em) {
-			.site-header {
-				padding-top: 25px;
-				padding-bottom: 25px;
-			}
-			.site-branding {
-				min-height: 62px;
-			}
-		}
-		@media screen and (min-width: 59.6875em) {
-			.site-header {
-				padding-top: 0;
-				padding-bottom: 0;
-			}
-			.site-branding {
-				min-height: 0;
-			}
-		}
+		
 	<?php
 		endif;
 
 		// Has a Custom Header been added?
 		if ( ! empty( $header_image ) ) :
 	?>
-		.site-header {
+		.name {
 			background: url(<?php header_image(); ?>) no-repeat 50% 50%;
 			-webkit-background-size: cover;
 			-moz-background-size:    cover;
@@ -150,7 +115,7 @@ function dareva_header_style() {
 				border-right: 0;
 			}
 
-			.site-header {
+			.name {
 				background: transparent;
 			}
 		}
@@ -191,12 +156,12 @@ function dareva_header_background_color_css() {
 	$css = '
 		/* Custom Header Background Color */
 		body:before,
-		.site-header {
+		.name {
 			background-color: %1$s;
 		}
 
 		@media screen and (min-width: 59.6875em) {
-			.site-header,
+			.name,
 			.secondary {
 				background-color: transparent;
 			}

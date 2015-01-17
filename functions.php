@@ -86,7 +86,8 @@ function dareva_setup() {
 	 * See: https://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 825, 510, true );
+	set_post_thumbnail_size( 848, 304, true );
+	add_image_size( 'dareva-latest', 70, 70, true );
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
@@ -108,7 +109,7 @@ function dareva_setup() {
 	 * See: https://codex.wordpress.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat'
+		'aside', 'image', 'video', 'quote', 'link', 'audio'
 	) );
 
 	$color_scheme  = dareva_get_color_scheme();
@@ -144,7 +145,7 @@ function dareva_widgets_init() {
 		'before_widget' => '<div id="%1$s"  class="widgets %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h5 class="widget-title">',
-		'after_title'   => '</h5>',
+		'after_title'   => '</h5><br>',
 	) );
 }
 add_action( 'widgets_init', 'dareva_widgets_init' );
@@ -373,3 +374,21 @@ require get_template_directory() . '/inc/template-tags.php';
  * @since DAREVA 1.0
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Customized Widgets.
+ *
+ * @since DAREVA 1.0
+ */
+require get_template_directory() . '/inc/widgets.php';
+
+/**
+ * Add Register Custom Widgets.
+ *
+ * @since DAREVA 1.0
+ */
+add_action( 'widgets_init', 'dareva_load_widgets' );
+function dareva_load_widgets() {
+	register_widget( 'Dareva_Latest_Posts' );
+	register_widget( 'Dareva_Categories' );
+}
