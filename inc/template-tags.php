@@ -258,3 +258,50 @@ function dareva_pagination_link($page, $class = '', $content = '', $title = '')
 }
 
 endif;
+
+
+if ( ! function_exists( 'dareva_comments' ) ) :
+/**
+ * Adds Comment layout
+ *
+ * @since DAREVA 1.0
+ */
+function dareva_comments($comment, $args, $depth) {
+   $GLOBALS['comment'] = $comment; ?>
+    <!-- Feed Entry -->
+    <li <?php comment_class('row'); ?> id="comment-<?php comment_ID(); ?>" >
+      <div class="two columns  mobile-four">
+        <div class="post-info comment-avatar parent">
+          <?php echo get_avatar( $comment, $size='65' ); ?>
+        </div>
+        <div class="comment-reply">
+          <ul>
+            <?php printf('<li>%s</li>', get_comment_author_link()) ?>
+            <li><?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></li>
+          </ul>
+        </div>
+      </div>
+      <div class="nine columns offset-by-one mobile-four">
+        <div class="panel">
+          <span class="comment-arrow parent">&nbsp;</span>
+          <?php if ($comment->comment_approved == '0') : ?>
+            <div class="alert-message success">
+              <p><?php _e('Your comment is awaiting moderation.','dareva') ?></p>
+            </div>
+          <?php endif; ?>
+          
+          <?php comment_text() ?>
+        </div>
+      </div>
+    <!-- </li>  End Feed Entry is added by wordpress automatically -->
+<?php
+} // don't remove this bracket!
+
+// Display trackbacks/pings callback function
+function list_pings($comment, $args, $depth) {
+       $GLOBALS['comment'] = $comment;
+?>
+        <li id="comment-<?php comment_ID(); ?>"><i class="fa fa-share-alt"></i>&nbsp;<?php comment_author_link(); ?>
+<?php 
+}
+endif;

@@ -1,154 +1,57 @@
+<?php
+/**
+ * The template for displaying comments
+ *
+ * The area of the page that contains both current comments
+ * and the comment form.
+ *
+ * @package WordPress
+ * @subpackage DAREVA
+ * @since DAREVA 1.0
+ */
+
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() ) {
+  return;
+}
+?>
+
+<?php if ( have_comments() ) : ?>
 <div class="row">
   <div class="offset-by-three nine columns">
     <ul class="comments-information">
-      <li class="comments-amount">4 RESPONSES</li>
+      <li class="comments-amount">
+        <?php
+          printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'dareva' ),
+            number_format_i18n( get_comments_number() ), get_the_title() );
+        ?>
+      </li>
     </ul>
   </div>
 </div>
+
 <div class="row">
   <div class="twelve columns">
     <section class="comments">
-   <!-- Feed Entry -->
-      <div class="row">
-        <div class="two  columns mobile-four">
-          <div class="post-info comment-avatar parent ">
 
-                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/fella2-post.png" alt="">
+      <ol class="comment-list">
+        <?php wp_list_comments('type=comment&callback=dareva_comments'); ?>
+      </ol>
 
-              </div>
-           <div class="comment-reply">
-                  <ul>
-                    <li>John Doe</li>
-                    <li><a href="">Reply</a></li>
-                  </ul>
-            </div>
-        </div>
+      <?php endif; // have_comments() ?>
 
-        <div class="nine columns offset-by-one mobile-four">
-          <div class="panel">
-            <span class="comment-arrow parent">&nbsp;</span>
-      <p>Come Back, Little Sheba is a videotaped television production of the play of the same name by William Inge made by Granada Television as part of the anthology series Laurence Olivier Presents Omg a Link transmitted in the UK by ITV on 1 January 1978. The selected plays were intended to represent "the best" in 20th Century theatre, staged for television.</p>
-    </div>
-    <br>
-          <div class="row">
-            <div class="two columns mobile-two">
-              <div class="post-info comment-avatar child">
+      <?php
+        // If comments are closed and there are comments, let's leave a little note, shall we?
+        if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+      ?>
+        <p class="no-comments"><?php _e( 'Comments are closed.', 'dareva' ); ?></p>
+      <?php endif; ?>
 
-                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/fella2-post.png" alt="">
-
-              </div>
-               <div class="comment-reply">
-                  <ul>
-                    <li>Mary Doe</li>
-                    <li><a href="">Reply</a></li>
-                  </ul>
-              </div>
-            </div>
-            <div class="nine columns offset-by-one mobile-two">
-              <div class="panel">
-                <span class="comment-arrow">&nbsp;</span>
-      <p>Olivier Presents Omg a Link transmitted in the UK by ITV on 1 January 1978. The selected plays were intended to represent "the best" in 20th Century theatre, staged for television.</p>
-      <p>Little Sheba is a videotaped television production of the play of the same name by William Inge made by Granada Television as part of the anthology series Laurence Olivier Presents Omg a Link transmitted in the UK</p>
-    </div>
-            </div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="two columns mobile-two">
-              <div class="post-info comment-avatar child">
-
-                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/fella2-post.png" alt="">
-
-              </div>
-              <div class="comment-reply">
-                  <ul>
-                    <li>John Doe</li>
-                    <li><a href="">Reply</a></li>
-                  </ul>
-              </div>
-            </div>
-            <div class="nine columns offset-by-one mobile-two">
-              <div class="panel">
-                <span class="comment-arrow">&nbsp;</span>
-      <p>William Inge made by Granada Television as part of the anthology series Laurence Olivier Presents Omg a Link transmitted in the UK by ITV on 1 January 1978. The selected plays were intended to represent "the best" in 20th Century theatre, staged for television.</p>
-    </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Feed Entry -->
-      <!-- Feed Entry -->
-      <br>
-      <div class="row">
-        <div class="two columns  mobile-four">
-          <div class="post-info comment-avatar parent">
-
-                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/fella2-post.png" alt="">
-
-              </div>
-           <div class="comment-reply">
-                  <ul>
-                    <li>Mary Doe</li>
-                    <li><a href="">Reply</a></li>
-                  </ul>
-              </div>
-        </div>
-        <div class="nine columns offset-by-one mobile-four">
-          <div class="panel">
-            <span class="comment-arrow parent parent">&nbsp;</span>
-      <p>Come Back, Little Sheba is a videotaped television production of the play of the same name by William Inge made by Granada Television as part of the anthology series Laurence Olivier Presents Omg a Link transmitted in the UK by ITV on 1 January 1978. The selected plays were intended to represent "the best" in 20th Century theatre, staged for television.</p>
-    </div>
-        </div>
-      </div>
-      <!-- End Feed Entry -->
-      <!-- Feed Entry -->
-      <div class="row">
-        <div class="two columns  mobile-four">
-          <div class="post-info comment-avatar parent">
-
-                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/fella2-post.png" alt="">
-
-              </div>
-           <div class="comment-reply">
-                  <ul>
-                    <li>John Doe</li>
-                    <li><a href="">Reply</a></li>
-                  </ul>
-              </div>
-        </div>
-        <div class="nine columns offset-by-one mobile-four">
-          <div class="panel">
-            <span class="comment-arrow parent">&nbsp;</span>
-      <p>Presents Omg a Link transmitted in the UK by ITV on 1 January 1978. The selected plays were intended to represent "the best" in 20th Century theatre, staged for television.</p>
-      <p>Little Sheba is a videotaped television production of the play of the same name by William Inge made by Granada Television as part of the anthology series Laurence Olivier Presents Omg a Link transmitted in the UK</p>
-    </div>
-
-          <div class="row">
-            <div class="two columns mobile-two">
-              <div class="post-info comment-avatar child">
-
-                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/fella2-post.png" alt="">
-
-              </div>
-               <div class="comment-reply">
-                  <ul>
-                    <li>Mary Doe</li>
-                    <li><a href="">Reply</a></li>
-                  </ul>
-              </div>
-            </div>
-            <div class="nine columns offset-by-one mobile-two">
-              <div class="panel">
-                <span class="comment-arrow">&nbsp;</span>
-      <p>It has an easy to override visual style, and is appropriately subdued.
-              Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p>
-    </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Feed Entry -->
-</section> <!-- end comments -->
+    </section> <!-- end comments -->
   </div> <!-- end offset -->
 </div><!-- end row -->
 
