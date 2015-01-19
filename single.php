@@ -21,15 +21,14 @@ get_header(); ?>
 <section class="row">
   <div class="nine columns">
     <section class="blog-container">
-
       <article class="blog-inner-container">
         <a href="#" class="th">
-          <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/blog-1.jpg" alt="blog">
+          <img src="img/blog/blog-1.jpg" alt="blog">
         </a>
         <div class="row">
-          <header class="offset-by-three nine columns">
-              <h1 class="blog-title">The Nokia brand new edition</h1>
-          </header>
+          <header class="offset-by-three nine columns"><a href="#">
+              <h3 class="blog-title">The Nokia brand new edition</h3>
+            </a></header>
         </div>
         <div class="row">
           <aside class="three columns">
@@ -67,7 +66,7 @@ get_header(); ?>
                 <div class="row">
                   <div class="seven columns">
                     <a href="#" class="th">
-                      <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/blog-2.jpg" alt="blog">
+                      <img src="img/blog/blog-2.jpg" alt="blog">
                     </a>
                   </div>
                   <div class="five columns">
@@ -100,7 +99,7 @@ get_header(); ?>
                   </div>
                   <div class="five columns">
                     <a href="#" class="th">
-                      <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/blog/blog-2.jpg" alt="blog">
+                      <img src="img/blog/blog-2.jpg" alt="blog">
                     </a>
                   </div>
 
@@ -108,20 +107,21 @@ get_header(); ?>
           </div>
         </div>
       </article>
-
   </section> <!-- end blog-container -->
 
-  <?php 
-    // If comments are open or we have at least one comment, load up the comment template.
+<?php
+// If comments are open or we have at least one comment, load up the comment template.
       if ( comments_open() || get_comments_number() ) :
         comments_template();
       endif;
-  ?>
+?>
+
+
 
 </div> <!-- end nine columns -->
-  
+
   <?php get_sidebar(); ?>
-  
+
 </section> <!-- end row -->
 
 
@@ -130,8 +130,9 @@ get_header(); ?>
     <div class="eight columns">
       <div class="msg-inner-container">
         <p class="lead">
-          Welcome to the FireStudio Subscription Center. Sign up here to receive the latest news and updates from the FireStudio conveniently via e-mail. Subscribe by entering your e-mail.
-        </p>
+  Welcome to the FireStudio Subscription Center. Sign up here to receive the latest news and updates from the FireStudio conveniently via e-mail. Subscribe by entering your e-mail.
+</p>
+
       </div>
     </div>
     <div class="four columns">

@@ -13,12 +13,8 @@
 
     <div class="blog-content">
         <?php
-        /* translators: %s: Name of current post */
-        the_content( sprintf(
-          __( 'Read more %s', 'dareva' ),
-          the_title( '<span class="screen-reader-text">', '</span>', false )
-        ) );
-      ?>
+          the_excerpt();
+        ?>
       </div>
     </div>
   </div>
