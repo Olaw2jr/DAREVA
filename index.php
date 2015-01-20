@@ -68,33 +68,4 @@ get_header(); ?>
 </div>
 </section>
 
-<section class="msg-container newsletter-subscription-container">
-  <div class="row">
-    <div class="eight columns">
-      <div class="msg-inner-container">
-        <p class="lead">
-          Welcome to the FireStudio Subscription Center. Sign up here to receive the latest news and updates from the FireStudio conveniently via e-mail. Subscribe by entering your e-mail.
-        </p>
-
-      </div>
-    </div>
-    <div class="four columns">
-      <form action="" class="newsletter-subscription">
-        <div class="row">
-          <div class="twelve columns">
-            <div class="row collapse">
-              <div class="eight mobile-three columns">
-                <input type="email" placeholder="Hello@FireStudio.us" required />
-              </div>
-              <div class="four mobile-one columns">
-                <button class="postfix btn btn-large btn-danger expand subscription-button">Subscribe</buttton>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
 <?php get_footer(); ?>

@@ -1,10 +1,10 @@
 <?php
 /**
- * The template for displaying pages
+ * The template for displaying About page
  *
  * Template Name: About
  *
- * This is the template that displays all pages by default.
+ * This is the template that displays about page by default.
  * Please note that this is the WordPress construct of pages and that
  * other "pages" on your WordPress site will use a different template.
  *

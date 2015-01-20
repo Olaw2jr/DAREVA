@@ -1,10 +1,10 @@
 <?php
 /**
- * The template for displaying pages
+ * The template for displaying clubs page
  *
  * Template Name: Clubs
  *
- * This is the template that displays all pages by default.
+ * This is the template that displays clubs pages by default.
  * Please note that this is the WordPress construct of pages and that
  * other "pages" on your WordPress site will use a different template.
  *
@@ -12,6 +12,8 @@
  * @subpackage DAREVA
  * @since DAREVA 1.0
  */
+
+query_posts('post_type=clubs&posts_per_page=10');
 
 get_header(); ?>
 

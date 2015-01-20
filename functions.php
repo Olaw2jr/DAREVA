@@ -383,6 +383,14 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/widgets.php';
 
 /**
+ * Load custom post type for clubs.
+ *
+ * @since DAREVA 1.0
+ */
+require get_template_directory() . '/inc/clubs-post_type.php';
+
+
+/**
  * Add Register Custom Widgets.
  *
  * @since DAREVA 1.0
