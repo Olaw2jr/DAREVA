@@ -187,19 +187,4 @@ get_header(); ?>
   </div>
 </section>
 
-
-
-<section class="msg-container diff-msg">
-  <div class="row">
-    <div class="twelve columns">
-      <div class="msg-inner-container">
-        <h3>I’ve always held to the belief that the practice of
-        creating compelling <br> graphic design occurs employing.</h3>
-        <h5 class="check-us"><a href="#" > Check our Story </a></h5>
-
-      </div>
-    </div>
-  </div>
-</section>
-
 <?php get_footer(); ?>

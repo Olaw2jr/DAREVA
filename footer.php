@@ -42,62 +42,6 @@
 <footer>
   <div class="footer-container">
       <div class="footer-inner-container">
-        <div class="row">
-        <div class="four columns">
-          <div class="footer-widgets">
-            <h4><span>&nbsp;</span>Twitter Timeline</h4>
-            <!-- <address>
-                  <strong>Foundation, Inc.</strong><br>
-                  795 Folsom Ave, Suite 600<br>
-                  San Francisco, CA 94107<br>
-                  <abbr title="Phone">P:</abbr> (123) 456-7890
-                </address> -->
-                 <div id="twitter-feed">&nbsp;</div>
-          </div>
-        </div>
-        <div class="two columns">
-          <div class="footer-widgets">
-            <h4><span>&nbsp;</span>Support</h4>
-            <ul>
-              <li><a href="#">Iphone</a></li>
-              <li><a href="#">Ipad</a></li>
-              <li><a href="#">Ipod</a></li>
-              <li><a href="#">Other</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="two columns">
-          <div class="footer-widgets">
-            <h4><span>&nbsp;</span>About</h4>
-            <ul>
-              <li><a href="#">Press</a></li>
-              <li><a href="#">Sell Products</a></li>
-              <li><a href="#">Careers</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="two columns">
-          <div class="footer-widgets">
-            <h4><span>&nbsp;</span>Contact</h4>
-            <ul>
-              <li><a href="#">Customer Service</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Sell Products</a></li>
-              <li><a href="#">FAQs</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="two columns">
-          <div class="footer-widgets">
-            <h4><span>&nbsp;</span>Legal</h4>
-            <ul>
-              <li><a href="#">Warranty</a></li>
-              <li><a href="#">Shipping &amp; Returns</a></li>
-              <li><a href="#">Legal, Privacy &amp; Terms</a></li>
-            </ul>
-          </div>
-        </div>
-      </div> <!-- end row -->
           <div class="row">
           <div class="twelve columns">
             <div class="subfooter">

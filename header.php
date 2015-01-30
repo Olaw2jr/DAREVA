@@ -41,7 +41,7 @@
           <!-- Title Area -->
           <li class="name">
             <h1>
-              <a href="index.html">
+              <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
                 <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.png" alt="logo">
               </a>
             </h1>
