@@ -55,48 +55,4 @@ if ( post_password_required() ) {
   </div> <!-- end offset -->
 </div><!-- end row -->
 
-<div class="row">
-  <div class="offset-by-three nine columns">
-    <div class="row">
-      <div class="comments-form">
-
-                   <form>
-                    <legend>Leave a reply
-                      <p>Want to join the discusion? <br>Feel free to contribute!
-                      </p>
-                    </legend>
-                    <div class="row">
-                      <div class="twelve mobile-four columns">
-                        <input type="text" id="inputName" placeholder="Name" required class="four left" /> <label for="inputName">Name *</label>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="twelve mobile-four columns">
-                        <input type="email" id="inputEmail" placeholder="Email" required class="four left" /> <label for="inputEmail">Email *</label>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="twelve mobile-four columns">
-                        <input type="url" id="inputUrl" placeholder="Website" class="four left" /> <label for="inputUrl">Website</label>
-                      </div>
-                    </div>
-                     <div class="row">
-                      <div class="twelve mobile-four columns">
-                        <textarea rows="8" class="ten" placeholder="Your comment"></textarea>
-                      </div>
-                      </div>
-                      <div class="row">
-                        <div class="eight columns">
-                          <p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></p>
-                        </div>
-                      </div>
-
-                    <button type="submit" class="btn btn-danger">Post Comment</button>
-                </form>
-
-
-
-      </div> <!-- end comments-form -->
-    </div> <!-- end row -->
-  </div> <!-- offset-by-three nine columns -->
-</div>
+<?php comment_form(); ?>

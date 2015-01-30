@@ -15,22 +15,22 @@
 	<?php
 		// Post thumbnail.
     if ( is_single() );
-	   dareva_post_thumbnail(); 
-     echo '<br><br>'
+	    dareva_post_thumbnail(); 
+      echo '<br><br>'
    	?>
   <div class="row">
     <header class="offset-by-two eight columns">
     	<?php
   			the_title( '<h1 class="blog-title entry-title">', '</h1>' );
-  	?>
+  	  ?>
      </header>
   </div>
   <div class="row">
     <div class="offset-by-two eight columns">
       <div class="blog-content">
         <?php
-  		the_content();
-  	?>
+      		the_content();
+      	?>
       </div>
     </div>
   </div>

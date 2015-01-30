@@ -14,6 +14,7 @@ get_header(); ?>
 
 <!-- slider-start -->
   <div id="header-container">
+  <div class="row">
     <div class="header">
         <img class="prev" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/bt-prev.png" alt="Previous Frame" />
         <img class="next" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/bt-next.png" alt="Next Frame" />
@@ -53,6 +54,7 @@ get_header(); ?>
           </li>
         </ul>
       </div>
+    </div>
     </div>
   </div>
 <!-- slider end -->
